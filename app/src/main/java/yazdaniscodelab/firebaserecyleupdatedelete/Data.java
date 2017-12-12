@@ -11,21 +11,12 @@ public class Data {
     String title;
     String description;
 
-    public String getImagecircle() {
-        return imagecircle;
-    }
 
-    public void setImagecircle(String imagecircle) {
-        this.imagecircle = imagecircle;
-    }
-
-    String imagecircle;
 
     public Data(String id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
-
     }
 
     public Data(){

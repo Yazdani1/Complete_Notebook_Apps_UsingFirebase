@@ -40,12 +40,9 @@ public class MainActivity extends AppCompatActivity {
         openInsertMethod();
 
 
-
-
         databaseReference= FirebaseDatabase.getInstance().getReference().child("AllData");
         databaseReference.keepSynced(true);
         recyclerView=(RecyclerView)findViewById(R.id.recyclerData);
-
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setReverseLayout(true);
@@ -58,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-
 
         FirebaseRecyclerAdapter<Data,MainActivity.AlldataViewholder>recyclerAdapter=new FirebaseRecyclerAdapter<Data, MainActivity.AlldataViewholder>
                 (
@@ -76,18 +71,15 @@ public class MainActivity extends AppCompatActivity {
                 viewHolder.setTitle(model.getTitle());
                 viewHolder.setDescription(model.getDescription());
 
-
                 viewHolder.mview.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
                         Intent intent=new Intent(getApplicationContext(),UpdateActivity.class);
-
                         intent.putExtra("post_key",post_key);
                         intent.putExtra("title",model.getTitle());
                         intent.putExtra("description",model.getDescription());
                         startActivity(intent);
-
                         //Toast.makeText(getApplicationContext(),post_key,Toast.LENGTH_LONG).show();
                     }
                 });
@@ -100,9 +92,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public static class AlldataViewholder extends RecyclerView.ViewHolder {
-
+//last
         View mview;
-        ImageView imageoftitle;
 
         public AlldataViewholder(View itemView) {
             super(itemView);
@@ -118,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
             TextView mdescription=(TextView)mview.findViewById(R.id.textdecriptio);
             mdescription.setText(description);
         }
-
-
 
     }
 

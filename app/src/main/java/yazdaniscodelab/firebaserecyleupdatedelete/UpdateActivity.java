@@ -76,15 +76,10 @@ public class UpdateActivity extends AppCompatActivity {
         btndelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 databaseReference.child(post_key).removeValue();
                 Toast.makeText(getApplicationContext(),"Delete Successfully..",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
-
-
     }
-
-
 }
